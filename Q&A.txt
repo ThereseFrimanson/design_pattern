@@ -1,0 +1,23 @@
+Q:What happens if the designers of the Storage 
+class decide to change the implementation of 
+the List to LinkedList?
+
+A:There will be a rumtimeException since there 
+is no linkedList to be called for. There is only 
+an ArrayList and it will not listen to a call 
+for a LinkedList. You would need to change more
+in the code than just one place for that to function.
+
+Q:Think about the method calls in main - does 
+trimToSize() exist in LinkedList?
+
+A:No it doesn't, so main should call for something 
+general in List and not specific to Linked- or
+ArrayLists.
+
+Q:Should Main know about what concrete type of 
+List Storage provides?
+
+A: No there's no reason for main to know what type of 
+List is used. Just stick to functions that is general to 
+List overall and there should be no problem. 
