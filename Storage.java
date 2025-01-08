@@ -3,10 +3,11 @@ import java.util.*;
 
 public class Storage{
   private final static String FILE = "persons.bin";
+
   @SuppressWarnings("unchecked")
-  public static ArrayList<Person> fetchPersons(){    
+  public static List<Person> fetchPersons(){    
     File f = new File(FILE);
-    ArrayList<Person> list = null;
+    LinkedList<Person> list = null;
     try{
       if (!f.exists()){
         System.out.println("INFO: Can't find " + FILE);
@@ -15,7 +16,7 @@ public class Storage{
       ObjectInputStream in = 
         new ObjectInputStream(new FileInputStream
                               (FILE));
-      list = (ArrayList<Person>)in.readObject();
+      list = (LinkedList<Person>)in.readObject();
       in.close(); 
     }catch(Exception e){
       System.err.println("Could not load address book from " + FILE);
@@ -23,7 +24,7 @@ public class Storage{
     return list;
   }
 
-  public static void save(ArrayList<Person> list){
+  public static void save(List<Person> list){
     try{
       ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE));
       out.writeObject(list);
