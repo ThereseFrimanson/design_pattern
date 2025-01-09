@@ -1,3 +1,4 @@
+TASK 1
 Q:What happens if the designers of the Storage 
 class decide to change the implementation of 
 the List to LinkedList?
@@ -21,3 +22,23 @@ List Storage provides?
 A: No there's no reason for main to know what type of 
 List is used. Just stick to functions that is general to 
 List overall and there should be no problem. 
+
+
+TASK 2
+1. Make a UML diagram showing the inheritance tree (you don't need to be specific)
+-> See inharitances.png.
+
+2. Is it possible in this design for an Engineer to also become a Manager?
+
+No.
+
+3. Re-design the classes so that there is only one (concrete) class called Employee.
+Create a new Class Role which has only a role name as the instance variable and a method for getting the role name and a toString() method (see below)
+Make an instance variable roles for the Employee as a List<Role>
+Make a constructor which takes name, department and initialRole for the Employee class
+(add the initial role to the list in the constructor)
+make a method for adding a role
+Make the toString() implementation so that it creates a String with name, department and [roles]
+Write a test program which confirms that you can create some employees with initial roles and that adding new roles work
+4. If you want a removeRole(Role) method, how do you have to change the Role class?
+hint: to remove an object from a list, the list must be able to find the object, perhaps using equals
